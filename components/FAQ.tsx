@@ -1,7 +1,9 @@
 import Reveal from "./ui/Reveal";
 import { SECTIONS } from "@/lib/site";
 
-const FAQS = [
+/** Exported so app/page.tsx can emit FAQPage structured data from the same
+ *  source the section renders — the two can never drift apart. */
+export const FAQS = [
   {
     q: "Will it actually sound human?",
     a: "It's built on enterprise-grade voice AI — natural pacing, natural tone, and interruptions handled gracefully. Most callers can't tell. Book a demo and we'll call you with it so you can judge for yourself.",

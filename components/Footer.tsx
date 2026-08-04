@@ -17,7 +17,8 @@ const COLUMNS = [
       { label: "The offer", href: `#${SECTIONS.offer}` },
       { label: "FAQ", href: `#${SECTIONS.faq}` },
       { label: EMAIL, href: `mailto:${EMAIL}` },
-      { label: PHONE_DISPLAY, href: PHONE_HREF },
+      // Noel's direct line, not the AI receptionist.
+      { label: `Call Noel · ${PHONE_DISPLAY}`, href: PHONE_HREF },
     ],
   },
 ];

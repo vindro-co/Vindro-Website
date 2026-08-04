@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Inter_Tight, Bricolage_Grotesque } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,44 +21,62 @@ const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
 });
 
-const SITE_URL = "https://vindro.ai";
+/** ~57 chars — stays inside Google's ~60-char title cutoff. */
+const TITLE = "AI Receptionists for GTA Home Service Businesses | Vindro";
+
+/** ~152 chars — inside the ~155-char snippet cutoff, leads with the offer. */
+const DESCRIPTION =
+  "Vindro builds and manages a human-sounding AI receptionist for your home service business. Every call answered in under a second, 24/7. Free for 30 days.";
+
+const OG_IMAGE = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "Vindro — every call booked, every job captured, zero extra staff.",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title:
-    "Vindro | AI Voice Receptionists for Home Service Businesses. Every Call Booked.",
-  description:
-    "Vindro builds, runs, and manages a human-sounding AI voice receptionist custom-made for your home service business. Never lose another emergency call to voicemail. Live in 14 days, fully done for you.",
+  title: {
+    default: TITLE,
+    // Any future page can set a short title and inherit the brand suffix.
+    template: "%s | Vindro",
+  },
+  description: DESCRIPTION,
   applicationName: "Vindro",
   keywords: [
     "AI voice receptionist",
+    "AI answering service",
     "home services answering service",
     "plumbing answering service",
     "HVAC answering service",
     "electrician call answering",
+    "roofing answering service",
     "AI receptionist for contractors",
     "24/7 dispatch for home services",
+    "after hours call answering Toronto",
     "GTA home service businesses",
   ],
   authors: [{ name: "Vindro" }],
   creator: "Vindro",
+  publisher: "Vindro",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: SITE_URL,
     siteName: "Vindro",
-    title:
-      "Vindro | AI Voice Receptionists for Home Service Businesses. Every Call Booked.",
-    description:
-      "A human-sounding AI receptionist custom-trained on your home service business. Answers in under a second, 24/7, and books the job instead of losing it to voicemail.",
+    title: TITLE,
+    description: DESCRIPTION,
     locale: "en_CA",
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vindro | AI Voice Receptionists for Home Service Businesses",
-    description:
-      "Every call booked. Every job captured. Zero extra staff. Done-for-you AI receptionists for home service businesses.",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
+  formatDetection: { telephone: true, email: true, address: false },
   robots: {
     index: true,
     follow: true,

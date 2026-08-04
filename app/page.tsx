@@ -8,33 +8,86 @@ import Comparison from "@/components/Comparison";
 import WeeklyReports from "@/components/WeeklyReports";
 import ROICalculator from "@/components/ROICalculator";
 import GrandSlamOffer from "@/components/GrandSlamOffer";
-import FAQ from "@/components/FAQ";
+import FAQ, { FAQS } from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import VoiceWidget from "@/components/VoiceWidget";
+import { EMAIL, SITE_URL } from "@/lib/site";
 
-/** Structured data so search engines understand the service, area and offer. */
+const DESCRIPTION =
+  "Done-for-you AI voice receptionists for home service businesses. Every call answered in under a second, 24/7, and booked straight into your calendar.";
+
+/**
+ * Structured data. A @graph so the business, the service and the FAQ are
+ * separate linked nodes — Google reads the FAQ node for rich results.
+ */
 const JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Vindro",
-  description:
-    "Done-for-you AI voice receptionists for home service businesses. Every call answered in under a second, 24/7, and booked straight into your calendar.",
-  url: "https://vindro.co",
-  email: "noel@vindro.co",
-  telephone: "+1-437-265-0812",
-  areaServed: {
-    "@type": "Place",
-    name: "Greater Toronto Area, Ontario, Canada",
-  },
-  serviceType: "AI voice receptionist for home service businesses",
-  slogan: "Every call booked. Every job captured. Zero extra staff.",
-  offers: {
-    "@type": "Offer",
-    description:
-      "First 30 days free, no setup costs, cancel anytime. Pricing quoted after a 15-minute demo.",
-    availability: "https://schema.org/InStock",
-  },
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#business`,
+      name: "Vindro",
+      description: DESCRIPTION,
+      url: SITE_URL,
+      email: EMAIL,
+      telephone: "+14372650812",
+      image: `${SITE_URL}/og.png`,
+      logo: `${SITE_URL}/logo.png`,
+      priceRange: "$$",
+      slogan: "Every call booked. Every job captured. Zero extra staff.",
+      areaServed: {
+        "@type": "Place",
+        name: "Greater Toronto Area, Ontario, Canada",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: "ON",
+        addressCountry: "CA",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "+14372650812",
+        email: EMAIL,
+        areaServed: "CA",
+        availableLanguage: ["en"],
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service`,
+      name: "AI voice receptionist for home service businesses",
+      serviceType: "AI voice receptionist",
+      provider: { "@id": `${SITE_URL}/#business` },
+      areaServed: {
+        "@type": "Place",
+        name: "Greater Toronto Area, Ontario, Canada",
+      },
+      description: DESCRIPTION,
+      offers: {
+        "@type": "Offer",
+        description:
+          "First 30 days free, no setup costs, cancel anytime. Pricing quoted after a 15-minute demo.",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: "0",
+          priceCurrency: "CAD",
+          description: "Free for the first 30 days, then quoted by call volume.",
+        },
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
 };
 
 export default function Page() {

@@ -38,8 +38,9 @@ export default function FinalCTA() {
                 >
                   Book a free demo
                 </a>
+                {/* Noel's personal line, not the AI — label it as a human. */}
                 <a href={PHONE_HREF} className="btn btn-outline-light btn-lg">
-                  Call {PHONE_DISPLAY}
+                  Talk to Noel · {PHONE_DISPLAY}
                 </a>
               </div>
 

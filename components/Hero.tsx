@@ -156,25 +156,28 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Stat cards */}
+          {/* Stat cards — capability claims about the product, deliberately NOT
+              results claims. Nothing here should imply a client track record. */}
           <div className="animate-float-2 absolute bottom-6 left-0 rounded-card border border-line bg-white px-[22px] py-[18px] shadow-lg2">
             <div className="font-display text-[32px] font-normal leading-[1.1] tracking-[-0.03em]">
-              <CountUp to={312} />
+              &lt;1s
             </div>
             <div className="mt-1 text-[12.5px] leading-[1.4] text-ink-faint">
-              emergency calls booked this
+              average time to answer —
               <br />
-              month across Vindro clients
+              2 AM or 2 PM
             </div>
           </div>
 
           {/* left-[54%] clears the wider stat card beside it (which ends at ~51%). */}
           <div className="animate-float-3 absolute -bottom-2.5 right-0 rounded-card border border-line bg-white px-[22px] py-[18px] shadow-lg2 sm:left-[54%] sm:right-auto">
             <div className="font-display text-[26px] font-normal leading-[1.1] tracking-[-0.03em]">
-              <CountUp to={8} suffix="s" />
+              <CountUp to={70} suffix="+" />
             </div>
             <div className="mt-1 text-[12.5px] leading-[1.4] text-ink-faint">
-              longest hold time, ever
+              languages, switched
+              <br />
+              mid-conversation
             </div>
           </div>
         </div>

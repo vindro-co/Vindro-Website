@@ -1,5 +1,8 @@
 /** Single source of truth for links, CTAs and section anchors. */
 
+/** Live domain. Drives metadataBase, canonical, OG tags, sitemap and JSON-LD. */
+export const SITE_URL = "https://vindro.co";
+
 export const SECTIONS = {
   demo: "demo",
   howItWorks: "how-it-works",

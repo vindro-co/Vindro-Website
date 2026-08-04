@@ -77,8 +77,15 @@ export default function WeeklyReports() {
           >
             <div className="mb-6 flex items-start justify-between gap-4">
               <div>
-                <div className="text-base font-semibold tracking-[-0.02em]">
-                  Weekly Performance Report
+                <div className="flex items-center gap-2">
+                  <span className="text-base font-semibold tracking-[-0.02em]">
+                    Weekly Performance Report
+                  </span>
+                  {/* These are illustrative figures for a made-up company, so say
+                      so on the card itself — not just in the section copy. */}
+                  <span className="rounded-full border border-line bg-bg-alt px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-ink-faint">
+                    Example
+                  </span>
                 </div>
                 <div className="mt-0.5 text-[12.5px] text-ink-faint">
                   Maple Ridge Home Services · Mon Jul 20 – Sun Jul 26

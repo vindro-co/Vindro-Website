@@ -56,6 +56,8 @@ export default function LiveDemo() {
         </Reveal>
 
         <Reveal delay={0.12}>
+          {/* The phone number is Noel's personal line, NOT the AI. Keep these two
+              ideas in separate sentences so nobody calls it expecting the agent. */}
           <p className="mt-8 text-center text-[15px] text-ink-soft">
             Want to hear it on a real phone line, trained on{" "}
             <em className="not-italic font-medium text-ink">your</em> business?{" "}
@@ -65,8 +67,9 @@ export default function LiveDemo() {
               className="font-semibold text-ink underline underline-offset-2"
             >
               Book a 15-minute demo
-            </a>{" "}
-            or call{" "}
+            </a>
+            .
+            <br className="hidden sm:block" /> Rather speak to a person first? Call Noel on{" "}
             <a
               href={PHONE_HREF}
               className="font-semibold text-ink underline underline-offset-2"
