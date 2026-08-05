@@ -15,7 +15,7 @@ import VoiceWidget from "@/components/VoiceWidget";
 import { EMAIL, SITE_URL } from "@/lib/site";
 
 const DESCRIPTION =
-  "Done-for-you AI voice receptionists for home service businesses. Every call answered in under a second, 24/7, and booked straight into your calendar.";
+  "Done-with-you AI voice receptionists for home service businesses. Every call answered in under a second, 24/7, and booked straight into your calendar.";
 
 /**
  * Structured data. A @graph so the business, the service and the FAQ are

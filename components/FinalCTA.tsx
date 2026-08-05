@@ -47,7 +47,7 @@ export default function FinalCTA() {
               </div>
 
               <p className="mt-7 text-[13px] font-medium text-white/45">
-                Free for 30 days · No setup costs · Cancel anytime · Live in 14 days · One
+                Free for 30 days · No setup costs · Cancel anytime · Live in 48 hours · One
                 company per trade, per service area
               </p>
             </div>

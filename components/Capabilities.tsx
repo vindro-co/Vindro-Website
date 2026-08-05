@@ -48,7 +48,7 @@ const CAPABILITIES = [
   },
   {
     title: "Summary, transcript & recording",
-    body: "Every call, searchable — and the raw material behind your Monday performance report.",
+    body: "Every call, searchable — and the raw material behind your weekly performance report.",
   },
   {
     title: "Connects to your stack",

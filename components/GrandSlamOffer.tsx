@@ -8,19 +8,19 @@ const STACK = [
   },
   {
     name: "Full dispatch & booking integration",
-    benefit: "connected to your scheduling and calendar tools, done for you",
+    benefit: "connected to your scheduling and calendar tools, set up with you",
   },
   {
     name: "Emergency-call triage logic",
     benefit: "urgent calls prioritized and booked first, never mishandled",
   },
   {
-    name: "White-glove 14-day launch",
+    name: "White-glove 48-hour launch",
     benefit: "stress-tested on hundreds of simulated calls before it takes one of yours",
   },
   {
     name: "Weekly performance reports",
-    benefit: "calls, jobs booked, and dollars recovered, every Monday",
+    benefit: "calls, jobs booked, and dollars recovered, every week",
   },
   {
     name: "Unlimited management & tuning",
@@ -58,7 +58,7 @@ export default function GrandSlamOffer() {
             <div className="eyebrow justify-center">The Vindro offer</div>
             <h2 className="mt-4">
               The Never-Miss-A-Call System for Home Service Businesses
-              <br />— Live in 14 Days.
+              <br />— Live in 48 Hours.
             </h2>
             <p>Here&apos;s everything you get — built, launched, and managed for you.</p>
           </div>
@@ -137,7 +137,7 @@ export default function GrandSlamOffer() {
 
         <Reveal>
           <p className="mt-10 text-center text-[15px] text-ink-soft">
-            You could hire, train, and pray. Or you could be live in 14 days with all of
+            You could hire, train, and pray. Or you could be live in 48 hours with all of
             the above, managed for you — free for the first month.
           </p>
         </Reveal>

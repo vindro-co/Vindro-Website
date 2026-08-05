@@ -1,6 +1,6 @@
 # Vindro — marketing site
 
-Production marketing site for **Vindro**, a done-for-you AI voice receptionist service for home service businesses (plumbing, HVAC, electrical, roofing, appliance repair and the rest of the trades) in the Greater Toronto Area.
+Production marketing site for **Vindro**, a done-with-you AI voice receptionist service for home service businesses (plumbing, HVAC, electrical, roofing, appliance repair and the rest of the trades) in the Greater Toronto Area.
 
 Built with **Next.js (App Router) + TypeScript + Tailwind CSS**, with Framer Motion for scroll-reveal motion.
 
@@ -177,8 +177,18 @@ it) — `Guarantee.tsx` is deleted and the `guarantee` anchor is gone from `lib/
 **The demo is 15 minutes.** Note the Calendly slug is still `/30min` — if that event is
 actually 30 minutes long, either rename the event or grep for `15-minute` and change it.
 
-**Time-to-live** is **14 days** everywhere. The original brief said 48 hours in two places
-and 14 days in five; 14 won. To change it, grep for `14 days`.
+**Time-to-live** is **48 hours** everywhere (hero bullet, offer heading, the offer stack's
+"White-glove 48-hour launch", the closing line, the final-CTA microcopy strip and the FAQ).
+To change it, grep for `48 hour`.
+
+**Delivery model** is worded **done-with-you** throughout — hero bullet, the How It Works
+eyebrow and subcopy, the footer line and the JSON-LD description. Note this sits in some
+tension with the surrounding copy ("No software to learn. No prompts to write. You never
+touch a dashboard"), which describes a done-*for*-you service. Grep for `with you` /
+`with-you` if you want it back.
+
+**Report cadence** is described as weekly, with no day named. The sample report card still
+shows a `Mon Jul 20 – Sun Jul 26` range, which describes the week covered, not a send day.
 
 **Vendor name.** The site deliberately never names the voice-AI vendor — `Capabilities.tsx`
 says "enterprise-grade voice AI".

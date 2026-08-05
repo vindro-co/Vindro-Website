@@ -42,7 +42,7 @@ export default function WeeklyReports() {
       <div className="container-x grid items-center gap-[50px] lg:grid-cols-[1fr_1.05fr] lg:gap-[70px]">
         {/* -------------------------------------------------------- Copy */}
         <Reveal>
-          <div className="eyebrow mb-4">Every Monday, in your inbox</div>
+          <div className="eyebrow mb-4">Every week, in your inbox</div>
           <h2 className="mb-[18px] text-[clamp(28px,3.2vw,38px)] leading-[1.1]">
             You&apos;ll never wonder if it&apos;s working. You&apos;ll see it.
           </h2>

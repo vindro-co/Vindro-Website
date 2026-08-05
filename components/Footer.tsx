@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <Logo height={24} />
             <p className="mt-4 max-w-[320px] text-sm text-ink-soft">
-              Done-for-you AI voice receptionists for home service businesses. Every call
+              Done-with-you AI voice receptionists for home service businesses. Every call
               booked. Every job captured.
             </p>
           </div>

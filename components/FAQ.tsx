@@ -30,11 +30,11 @@ export const FAQS = [
   },
   {
     q: "How fast can I be live?",
-    a: "14 days from kickoff, typically. We build, integrate, and stress-test on simulated calls first — it never learns on your real customers.",
+    a: "48 hours from kickoff, typically. We build, integrate, and stress-test on simulated calls first — it never learns on your real customers.",
   },
   {
     q: "What's in the weekly report?",
-    a: "Calls answered, after-hours calls captured, jobs and service booked, estimated revenue recovered, top caller requests, and what we improved that week. Five minutes to read, every Monday.",
+    a: "Calls answered, after-hours calls captured, jobs and service booked, estimated revenue recovered, top caller requests, and what we improved that week. Five minutes to read, every week.",
   },
   {
     q: "What does it cost after the trial?",

@@ -104,9 +104,9 @@ export default function Hero() {
             <ul className="mt-[30px] flex flex-col gap-[9px]">
               {[
                 { text: "Free for your first 30 days — no setup costs" },
-                { text: "Live in 14 days — fully done for you" },
+                { text: "Live in 48 hours — fully done with you" },
                 {
-                  text: "Weekly performance reports, every Monday — ",
+                  text: "Weekly performance reports — ",
                   link: { label: "cancel anytime", href: `#${SECTIONS.offer}` },
                 },
               ].map((item) => (

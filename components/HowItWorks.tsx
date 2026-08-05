@@ -40,11 +40,11 @@ export default function HowItWorks() {
       <div className="container-x">
         <Reveal>
           <div className="section-head">
-            <div className="eyebrow justify-center">Fully done for you</div>
+            <div className="eyebrow justify-center">Fully done with you</div>
             <h2 className="mt-4">You run the trucks. We run the phones.</h2>
             <p>
               No software to learn. No prompts to write. No engineers to hire. Vindro is a
-              managed service from day one to every day after — this is done-for-you, not
+              managed service from day one to every day after — this is done-with-you, not
               do-it-yourself.
             </p>
           </div>
