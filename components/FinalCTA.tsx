@@ -1,5 +1,5 @@
 import Reveal from "./ui/Reveal";
-import { BOOKING_URL, EXTERNAL_LINK, PHONE_DISPLAY, PHONE_HREF, SECTIONS } from "@/lib/site";
+import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
 
 export default function FinalCTA() {
   return (
@@ -38,9 +38,11 @@ export default function FinalCTA() {
                 >
                   Book a free demo
                 </a>
-                {/* Noel's personal line, not the AI — label it as a human. */}
-                <a href={PHONE_HREF} className="btn btn-outline-light btn-lg">
-                  Talk to Noel · {PHONE_DISPLAY}
+                <a
+                  href={`#${SECTIONS.demo}`}
+                  className="btn btn-outline-light btn-lg"
+                >
+                  Hear the receptionist
                 </a>
               </div>
 

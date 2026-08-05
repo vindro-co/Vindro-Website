@@ -76,14 +76,29 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: [OG_IMAGE.url],
   },
-  formatDetection: { telephone: true, email: true, address: false },
+  // No phone number on the site, so stop iOS turning stray digits (job values,
+  // ROI figures) into tap-to-call links. Email/address are listed for the same
+  // reason; the explicit mailto: links are unaffected by format detection.
+  formatDetection: { telephone: false, email: false, address: false },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    // The supplied mark is near-white (#f3f3f1), so it only reads on a dark tab
+    // bar. Ship the same shape inked for light UI and let the browser pick.
+    // Light-scheme entry is last so browsers without `media` support land on it.
+    icon: [
+      {
+        url: "/icon-on-dark.png",
+        type: "image/png",
+        sizes: "512x512",
+        media: "(prefers-color-scheme: dark)",
+      },
+      { url: "/icon-on-light.png", type: "image/png", sizes: "512x512" },
+    ],
+    // Opaque: iOS composites transparency to black on the home screen.
     apple: "/apple-icon.png",
   },
   category: "business",

@@ -69,7 +69,7 @@ components/
   ui/               Reveal, CountUp, BarChart, Orb
 lib/site.ts         Anchors, nav links, email, phone, booking URL, agent id
 types/              JSX declaration + attribute list for <elevenlabs-convai>
-public/             logo*.png, icon.png, apple-icon.png (all transparent)
+public/             logo*.png, icon-on-{light,dark}.png, apple-icon.png, og.png
 ```
 
 ## Design system
@@ -109,8 +109,11 @@ Contact details and every CTA destination live in one place, [`lib/site.ts`](lib
 | Constant | Value |
 | --- | --- |
 | `EMAIL` | `noel@vindro.co` |
-| `PHONE_DISPLAY` / `PHONE_HREF` | `437-265-0812` / `tel:+14372650812` |
 | `BOOKING_URL` | `https://calendly.com/noel-vindro/30min` |
+
+There is deliberately **no phone number** anywhere on the site — contact is email or the
+Calendly booking only. `formatDetection.telephone` is `false` in `app/layout.tsx` so iOS
+doesn't turn stray digits (job values, the ROI figures) into tap-to-call links.
 
 Every "Book a demo" button points at `BOOKING_URL` and spreads `EXTERNAL_LINK`
 (`target="_blank"` + `rel="noopener noreferrer"`). Change the link once and all seven
@@ -193,6 +196,17 @@ field in the JSON-LD block (`app/page.tsx`) before going live.
 
 `public/logo.png` and friends are generated from the source artwork, trimmed to the ink
 with a fully transparent background (`logo.png` 1879×482, `logo-mark.png` 423×482, plus
-white variants for dark panels and a transparent `icon.png` favicon). If you replace them,
-keep the transparency — an opaque background shows as a black box behind the wordmark in
-the nav.
+white variants for dark panels). If you replace them, keep the transparency — an opaque
+background shows as a black box behind the wordmark in the nav.
+
+**Favicon.** The supplied mark is near-white (`#f3f3f1`), which is invisible on a light
+browser tab bar, so there are two 512×512 variants of the same shape:
+
+| File | Used when | Glyph |
+| --- | --- | --- |
+| `icon-on-dark.png` | `prefers-color-scheme: dark` | as supplied, `#f3f3f1` |
+| `icon-on-light.png` | everything else (the fallback) | repainted `#0a0a0a` |
+
+Both are declared in `app/layout.tsx`; the light-scheme entry is listed **last** so
+browsers that ignore the `media` attribute fall back to the visible one. `apple-icon.png`
+is deliberately **opaque** — iOS composites transparency to black on the home screen.

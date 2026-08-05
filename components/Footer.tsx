@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { EMAIL, PHONE_DISPLAY, PHONE_HREF, SECTIONS } from "@/lib/site";
+import { EMAIL, SECTIONS } from "@/lib/site";
 
 const COLUMNS = [
   {
@@ -17,8 +17,6 @@ const COLUMNS = [
       { label: "The offer", href: `#${SECTIONS.offer}` },
       { label: "FAQ", href: `#${SECTIONS.faq}` },
       { label: EMAIL, href: `mailto:${EMAIL}` },
-      // Noel's direct line, not the AI receptionist.
-      { label: `Call Noel · ${PHONE_DISPLAY}`, href: PHONE_HREF },
     ],
   },
 ];

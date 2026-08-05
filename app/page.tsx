@@ -31,7 +31,6 @@ const JSON_LD = {
       description: DESCRIPTION,
       url: SITE_URL,
       email: EMAIL,
-      telephone: "+14372650812",
       image: `${SITE_URL}/og.png`,
       logo: `${SITE_URL}/logo.png`,
       priceRange: "$$",
@@ -48,7 +47,6 @@ const JSON_LD = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
-        telephone: "+14372650812",
         email: EMAIL,
         areaServed: "CA",
         availableLanguage: ["en"],

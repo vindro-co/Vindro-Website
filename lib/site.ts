@@ -16,8 +16,6 @@ export const SECTIONS = {
 } as const;
 
 export const EMAIL = "noel@vindro.co";
-export const PHONE_DISPLAY = "437-265-0812";
-export const PHONE_HREF = "tel:+14372650812";
 
 /** Primary CTA — the 15-minute demo booking page. */
 export const BOOKING_URL = "https://calendly.com/noel-vindro/30min";

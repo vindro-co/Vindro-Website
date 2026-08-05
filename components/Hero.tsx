@@ -1,4 +1,3 @@
-import CountUp from "./ui/CountUp";
 import Orb from "./ui/Orb";
 import Reveal from "./ui/Reveal";
 import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
@@ -127,11 +126,14 @@ export default function Hero() {
         </div>
 
         {/* -------------------------------------------------------- Visual */}
-        {/* Tall enough that the floating stat cards sit clear of the transcript
-            card's footer tags instead of covering them. */}
-        <div className="relative mx-auto min-h-[560px] w-full max-w-[480px] lg:max-w-none">
+        {/* Single card, so it sits in normal flow and the column sizes to it —
+            no fixed min-height to leave a gap. */}
+        {/* mx-auto centres it while stacked; lg:mr-0 flushes it to the column's
+            right edge on desktop. (Don't use justify-self here — auto margins
+            win over justify-self in grid, so it would stay centred.) */}
+        <div className="mx-auto w-full max-w-[380px] lg:mr-0">
           {/* Call transcript */}
-          <div className="animate-float-1 absolute right-0 top-0 w-[min(380px,100%)] rounded-xl2 border border-line bg-white p-5 shadow-lg2">
+          <div className="animate-float-1 w-full rounded-xl2 border border-line bg-white p-5 shadow-lg2">
             <div className="mb-3.5 flex items-center gap-2 text-[11.5px] font-semibold uppercase tracking-[0.07em] text-ink-faint">
               <span className="inline-block h-[7px] w-[7px] rounded-full bg-green" />
               Incoming call · 2:14 AM
@@ -153,31 +155,6 @@ export default function Hero() {
             <div className="mt-3.5 flex flex-wrap gap-2">
               <span className="tag tag-solid">Job booked · $420</span>
               <span className="tag">After hours</span>
-            </div>
-          </div>
-
-          {/* Stat cards — capability claims about the product, deliberately NOT
-              results claims. Nothing here should imply a client track record. */}
-          <div className="animate-float-2 absolute bottom-6 left-0 rounded-card border border-line bg-white px-[22px] py-[18px] shadow-lg2">
-            <div className="font-display text-[32px] font-normal leading-[1.1] tracking-[-0.03em]">
-              &lt;1s
-            </div>
-            <div className="mt-1 text-[12.5px] leading-[1.4] text-ink-faint">
-              average time to answer —
-              <br />
-              2 AM or 2 PM
-            </div>
-          </div>
-
-          {/* left-[54%] clears the wider stat card beside it (which ends at ~51%). */}
-          <div className="animate-float-3 absolute -bottom-2.5 right-0 rounded-card border border-line bg-white px-[22px] py-[18px] shadow-lg2 sm:left-[54%] sm:right-auto">
-            <div className="font-display text-[26px] font-normal leading-[1.1] tracking-[-0.03em]">
-              <CountUp to={70} suffix="+" />
-            </div>
-            <div className="mt-1 text-[12.5px] leading-[1.4] text-ink-faint">
-              languages, switched
-              <br />
-              mid-conversation
             </div>
           </div>
         </div>
