@@ -1,5 +1,6 @@
 import Reveal from "./ui/Reveal";
-import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, SECTIONS } from "@/lib/site";
 
 export default function FinalCTA() {
   return (
@@ -31,13 +32,9 @@ export default function FinalCTA() {
               </p>
 
               <div className="flex flex-wrap justify-center gap-3">
-                <a
-                  href={BOOKING_URL}
-                  {...EXTERNAL_LINK}
-                  className="btn btn-light btn-lg"
-                >
+                <Link href={BOOKING_PATH} className="btn btn-light btn-lg">
                   Book a free demo
-                </a>
+                </Link>
                 <a
                   href={`#${SECTIONS.demo}`}
                   className="btn btn-outline-light btn-lg"

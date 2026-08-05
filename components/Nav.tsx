@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
-import { BOOKING_URL, EXTERNAL_LINK, NAV_LINKS, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, NAV_LINKS, SECTIONS } from "@/lib/site";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -41,13 +42,12 @@ export default function Nav() {
           >
             Hear it in action
           </a>
-          <a
-            href={BOOKING_URL}
-            {...EXTERNAL_LINK}
+          <Link
+            href={BOOKING_PATH}
             className="btn btn-primary px-4 py-[9px] text-[13.5px]"
           >
             Book a free demo
-          </a>
+          </Link>
         </div>
 
         <button
@@ -91,14 +91,13 @@ export default function Nav() {
               {link.label}
             </a>
           ))}
-          <a
-            href={BOOKING_URL}
-            {...EXTERNAL_LINK}
+          <Link
+            href={BOOKING_PATH}
             onClick={() => setOpen(false)}
             className="btn btn-primary mt-2"
           >
             Book a free demo
-          </a>
+          </Link>
         </div>
       )}
     </header>

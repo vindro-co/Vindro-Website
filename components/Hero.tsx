@@ -1,6 +1,7 @@
 import Orb from "./ui/Orb";
 import Reveal from "./ui/Reveal";
-import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, SECTIONS } from "@/lib/site";
 
 const USE_CASES = [
   {
@@ -89,13 +90,9 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href={BOOKING_URL}
-                {...EXTERNAL_LINK}
-                className="btn btn-primary btn-lg"
-              >
+              <Link href={BOOKING_PATH} className="btn btn-primary btn-lg">
                 Book a free demo
-              </a>
+              </Link>
               <a href={`#${SECTIONS.demo}`} className="btn btn-ghost btn-lg">
                 ▶&nbsp; Hear the receptionist
               </a>

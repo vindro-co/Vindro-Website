@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { EMAIL, SECTIONS } from "@/lib/site";
+import { BOOKING_PATH, EMAIL, SECTIONS } from "@/lib/site";
 
 const COLUMNS = [
   {
@@ -16,6 +16,7 @@ const COLUMNS = [
     links: [
       { label: "The offer", href: `#${SECTIONS.offer}` },
       { label: "FAQ", href: `#${SECTIONS.faq}` },
+      { label: "Book a demo", href: BOOKING_PATH },
       { label: EMAIL, href: `mailto:${EMAIL}` },
     ],
   },

@@ -110,15 +110,37 @@ Contact details and every CTA destination live in one place, [`lib/site.ts`](lib
 | Constant | Value |
 | --- | --- |
 | `EMAIL` | `noel@vindro.co` |
-| `BOOKING_URL` | `https://calendly.com/noel-vindro/30min` |
+| `BOOKING_PATH` | `/book` — where every CTA points |
+| `BOOKING_URL` | `https://calendly.com/noel-vindro` — embed source + fallback |
 
 There is deliberately **no phone number** anywhere on the site — contact is email or the
 Calendly booking only. `formatDetection.telephone` is `false` in `app/layout.tsx` so iOS
 doesn't turn stray digits (job values, the ROI figures) into tap-to-call links.
 
-Every "Book a demo" button points at `BOOKING_URL` and spreads `EXTERNAL_LINK`
-(`target="_blank"` + `rel="noopener noreferrer"`). Change the link once and all seven
-CTAs follow.
+### The booking page
+
+Every "Book a demo" CTA is a `next/link` to **`/book`** ([`app/book/page.tsx`](app/book/page.tsx)),
+an on-domain page hosting Calendly's inline scheduler. Visitors never leave `vindro.co`,
+which keeps the branding intact through the most important step and gives you a page to
+attach conversion tracking to — impossible on a `calendly.com` hand-off.
+
+The page uses a slim header (logo + "Back to site") rather than the full nav: it's the last
+step before a booking, so there's no reason to offer exits.
+
+Two things in [`CalendlyEmbed.tsx`](components/CalendlyEmbed.tsx) that are easy to break:
+
+1. **`widget.js` scans the DOM for `.calendly-inline-widget` only once, on its own load.**
+   That covers a cold visit to `/book`, but on a client-side nav from the home page the
+   script is already cached and executed, so nothing scans and the container stays empty.
+   The component therefore also calls `Calendly.initInlineWidget` itself — guarded on the
+   container being empty, so a cold load doesn't stack two schedulers. Both paths are
+   verified to render exactly one `<iframe>`.
+2. **Calendly requires `min-width: 320px`.** On a 320px viewport the container's 24px
+   padding would push it past the edge, so the embed is full-bleed (`-mx-6 sm:mx-0`) below
+   `sm`. Verified at 320px: container is exactly 320px with no horizontal overflow.
+
+If the script fails entirely the component surfaces a direct `BOOKING_URL` link rather than
+leaving a blank 700px box.
 
 ### The voice demo
 

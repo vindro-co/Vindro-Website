@@ -17,10 +17,21 @@ export const SECTIONS = {
 
 export const EMAIL = "noel@vindro.co";
 
-/** Primary CTA — the 15-minute demo booking page. */
-export const BOOKING_URL = "https://calendly.com/noel-vindro/30min";
+/**
+ * Where every "Book a demo" CTA goes: an on-domain page hosting the Calendly
+ * embed. Keeping visitors on vindro.co preserves the branding through the most
+ * important step and gives us a page to attach conversion tracking to, which a
+ * calendly.com hand-off cannot.
+ */
+export const BOOKING_PATH = "/book";
 
-/** Spread onto every outbound booking link. */
+/** Calendly scheduling page — embed source, and the fallback if the embed fails. */
+export const BOOKING_URL = "https://calendly.com/noel-vindro";
+
+/** `hide_gdpr_banner` suppresses Calendly's own cookie notice inside the frame. */
+export const BOOKING_EMBED_URL = `${BOOKING_URL}?hide_gdpr_banner=1`;
+
+/** Spread onto genuinely outbound links. */
 export const EXTERNAL_LINK = {
   target: "_blank",
   rel: "noopener noreferrer",

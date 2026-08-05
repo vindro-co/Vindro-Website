@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Reveal from "./ui/Reveal";
-import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, SECTIONS } from "@/lib/site";
 
 const WEEKS_PER_MONTH = 4.33;
 
@@ -158,13 +159,12 @@ export default function ROICalculator() {
                 </div>
               </div>
 
-              <a
-                href={BOOKING_URL}
-                {...EXTERNAL_LINK}
+              <Link
+                href={BOOKING_PATH}
                 className="btn btn-light btn-lg btn-block mt-auto"
               >
                 Recover this revenue — book a demo
-              </a>
+              </Link>
               <p className="mt-3.5 text-center text-[11.5px] text-white/40">
                 Estimates based on your inputs. We&apos;ll build your exact numbers, from
                 your real call data, in your first weekly report.

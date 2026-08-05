@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL } from "@/lib/site";
+import { BOOKING_PATH, SITE_URL } from "@/lib/site";
 
 /**
  * Date the page's *content* last meaningfully changed — bump this by hand when
@@ -12,7 +12,6 @@ import { SITE_URL } from "@/lib/site";
  */
 const CONTENT_LAST_MODIFIED = new Date("2026-08-05T00:00:00Z");
 
-/** Single-page site — one entry. Add a row per route if pages are added. */
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -20,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: CONTENT_LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${SITE_URL}${BOOKING_PATH}`,
+      lastModified: CONTENT_LAST_MODIFIED,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
   ];
 }

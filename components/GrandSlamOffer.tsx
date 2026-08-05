@@ -1,5 +1,6 @@
 import Reveal from "./ui/Reveal";
-import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, SECTIONS } from "@/lib/site";
 
 const STACK = [
   {
@@ -119,13 +120,12 @@ export default function GrandSlamOffer() {
               </ul>
 
               <div className="mt-auto pt-9">
-                <a
-                  href={BOOKING_URL}
-                  {...EXTERNAL_LINK}
+                <Link
+                  href={BOOKING_PATH}
                   className="btn btn-light btn-lg btn-block"
                 >
                   Start your free 30 days
-                </a>
+                </Link>
                 <p className="mt-3.5 text-center text-[12.5px] text-white/50">
                   Pricing after the trial depends on your call volume — we quote it on the
                   15-minute demo, once you&apos;ve seen your own numbers.

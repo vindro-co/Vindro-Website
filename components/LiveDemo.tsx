@@ -1,6 +1,7 @@
 import Reveal from "./ui/Reveal";
 import StartCallButton from "./StartCallButton";
-import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, SECTIONS } from "@/lib/site";
 
 /**
  * Deliberately routine, non-urgent calls. A visitor trying the demo should not
@@ -61,13 +62,12 @@ export default function LiveDemo() {
           <p className="mt-8 text-center text-[15px] text-ink-soft">
             Want to hear it on a real phone line, trained on{" "}
             <em className="not-italic font-medium text-ink">your</em> business?{" "}
-            <a
-              href={BOOKING_URL}
-              {...EXTERNAL_LINK}
+            <Link
+              href={BOOKING_PATH}
               className="font-semibold text-ink underline underline-offset-2"
             >
               Book a 15-minute demo
-            </a>{" "}
+            </Link>{" "}
             and we&apos;ll call you with it.
           </p>
         </Reveal>

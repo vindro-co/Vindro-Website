@@ -1,5 +1,6 @@
 import Reveal from "./ui/Reveal";
-import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
+import Link from "next/link";
+import { BOOKING_PATH, SECTIONS } from "@/lib/site";
 
 type Mark = "yes" | "mid" | "no";
 
@@ -145,13 +146,12 @@ export default function Comparison() {
                 </div>
 
                 {option.vindro && (
-                  <a
-                    href={BOOKING_URL}
-                    {...EXTERNAL_LINK}
+                  <Link
+                    href={BOOKING_PATH}
                     className="btn btn-primary mt-5 self-start"
                   >
                     Book a free demo
-                  </a>
+                  </Link>
                 )}
               </div>
             </Reveal>
