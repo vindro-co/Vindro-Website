@@ -2,10 +2,15 @@ import Reveal from "./ui/Reveal";
 import StartCallButton from "./StartCallButton";
 import { BOOKING_URL, EXTERNAL_LINK, SECTIONS } from "@/lib/site";
 
+/**
+ * Deliberately routine, non-urgent calls. A visitor trying the demo should not
+ * have to role-play an emergency, and these are the bread-and-butter calls the
+ * agent handles anyway: a service request, a quote, and a booking.
+ */
 const PROMPTS = [
-  "“My basement is flooding — can someone come out tonight?”",
-  "“How much for a new water heater?”",
-  "“Can I book a tune-up for Thursday morning?”",
+  "“There's a small leak under my kitchen sink — can someone take a look?”",
+  "“What would you charge to replace a water heater?”",
+  "“Can I get on the schedule for a furnace tune-up next week?”",
 ];
 
 export default function LiveDemo() {
