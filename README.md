@@ -197,11 +197,34 @@ says "enterprise-grade voice AI".
 `HowItWorks.tsx`, `Capabilities.tsx` and the JSON-LD `areaServed` in `app/page.tsx` if you
 ever want to go national.
 
+## SEO
+
+Everything a search engine reads lives in four places:
+
+| What | Where |
+| --- | --- |
+| `<title>`, meta description, Open Graph, Twitter | `TITLE` / `DESCRIPTION` in [`app/layout.tsx`](app/layout.tsx) — one edit updates all of them |
+| Share image | `OG_IMAGE` → `public/og.png` |
+| `ProfessionalService` + `FAQPage` JSON-LD | [`app/page.tsx`](app/page.tsx) (FAQ entries come from `FAQS` in `FAQ.tsx`, so they can't drift) |
+| `/robots.txt`, `/sitemap.xml` | [`app/robots.ts`](app/robots.ts), [`app/sitemap.ts`](app/sitemap.ts) |
+
+**Bump `CONTENT_LAST_MODIFIED` in `app/sitemap.ts` when you change copy.** It is
+deliberately a fixed date rather than `new Date()`: build-time stamps tell Google the page
+changed on every deploy, including deploys that only touched styles or dependencies, and a
+lastmod that always reads "just now" gets ignored — losing you the signal precisely when a
+real change needs crawling.
+
+Editing metadata changes what the server sends; it does **not** change what Google has
+stored. To refresh a stale snippet, use Search Console → URL Inspection → Request Indexing,
+and submit `sitemap.xml`. Expect days, not minutes, and note Google rewrites titles and
+descriptions when it judges another string a better match for the query.
+
 ## Deploy
 
-Any Node host works. On Vercel, import the repo and accept the defaults — no environment
-variables required. Set the real domain in `SITE_URL` (`app/layout.tsx`) and the `url`
-field in the JSON-LD block (`app/page.tsx`) before going live.
+Pushing to `main` triggers Hostinger's auto-deploy; the live site updates in roughly 80
+seconds. Any Node host works otherwise. `SITE_URL` in [`lib/site.ts`](lib/site.ts) is the
+single source for the domain — it feeds `metadataBase`, the canonical tag, the JSON-LD and
+the sitemap.
 
 ### Logo assets
 
