@@ -27,7 +27,7 @@ export const EXTERNAL_LINK = {
 } as const;
 
 /** Public ElevenLabs agent powering the on-site voice demo. */
-export const ELEVENLABS_AGENT_ID = "agent_6101kz478n5ee82tz8d4cd7w3pz2";
+export const ELEVENLABS_AGENT_ID = "agent_9101kza1zrycfqvbaza8rr732f6y";
 
 /**
  * Pinned rather than floating on `latest` — an unversioned unpkg URL can ship a

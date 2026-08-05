@@ -146,11 +146,29 @@ change on your side.
 clicking the widget's own `aria-label="Start a call"` control through its open shadow root.
 It tries the method first, so it keeps working if a later release restores the API.
 
-Useful attributes (set in `VoiceWidget.tsx`): `variant="compact|expanded"`, `dismissible`,
-`disable-banner` (hides "Powered by ElevenLabs" — plan-dependent), `server-location`, and
-the text overrides `action-text` / `start-call-text` / `listening-text`. Note the text
-overrides appeared to be ignored by 0.15.1 in testing — the control still reads "Start a
-call".
+**Trust the element, not the docs, for which attributes exist.** ElevenLabs' documentation
+lists several that 0.15.1 doesn't implement. Read the real list at runtime:
+
+```js
+document.querySelector("elevenlabs-convai").constructor.observedAttributes
+```
+
+Two that are documented but **absent** in 0.15.1, so setting them silently does nothing:
+
+- `disable-banner` — the "Powered by ElevenAgents" strip. The supported switch is in the
+  ElevenLabs dashboard's widget settings. `VoiceWidget.tsx` also hides it in the DOM, matched
+  **by text**, because the branding is a `<p>` inside `.overlay` and `.overlay` is reused for
+  call-status text — a `.overlay > p` rule would hide live call state too. A MutationObserver
+  re-applies it, since the widget rebuilds that node on every state change.
+- `action-text` / `start-call-text` / `end-call-text` / `listening-text` — label overrides.
+  0.15.1 takes labels through `text-contents` instead.
+
+Attributes that do work and are worth knowing: `variant="compact|expanded"`, `dismissible`,
+`placement`, `default-expanded`, `always-expanded`, `server-location`, `language`,
+`text-input`, `transcript`, `avatar-orb-color-1` / `-2`.
+
+The DOM-hiding of the banner is vendor-markup-dependent by nature. If the strip ever
+reappears after a widget update, prefer the dashboard toggle over patching the selector.
 
 ### The ROI calculator
 
