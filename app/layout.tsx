@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Inter_Tight, Bricolage_Grotesque } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -13,12 +13,6 @@ const interTight = Inter_Tight({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter-tight",
-});
-
-const bricolage = Bricolage_Grotesque({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-bricolage",
 });
 
 /** ~57 chars — stays inside Google's ~60-char title cutoff. */
@@ -118,7 +112,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-CA"
-      className={`${inter.variable} ${interTight.variable} ${bricolage.variable}`}
+      className={`${inter.variable} ${interTight.variable}`}
     >
       <body className="font-sans">
         {/* Scroll-reveal wrappers render with opacity:0 until Framer Motion

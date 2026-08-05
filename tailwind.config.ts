@@ -31,7 +31,6 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
         display: ["var(--font-inter-tight)", "var(--font-inter)", "-apple-system", "sans-serif"],
-        hero: ["var(--font-bricolage)", "var(--font-inter-tight)", "sans-serif"],
       },
       borderRadius: {
         card: "14px",

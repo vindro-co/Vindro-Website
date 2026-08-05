@@ -85,9 +85,10 @@ Monochrome. Near-black on off-white; the only colour in the palette comes from t
 | `green` | `#16a34a` (✓ marks, deltas, the Vindro comparison card) |
 | radii | `card` 14px, `xl2` 20px |
 
-- **Type** — Bricolage Grotesque 700 for the hero headline; Inter Tight (300/400) for
-  section headings and figures; Inter for body and UI. All via `next/font` (self-hosted,
-  no layout shift).
+- **Type** — two families only. Inter Tight (`font-display`) for the hero headline,
+  section headings and figures; Inter (`font-sans`) for body and UI. Both via `next/font`
+  (self-hosted, no layout shift). Bricolage Grotesque was dropped from the hero — too
+  characterful for the tone, and it was the only thing loading that third font.
 - **Orbs** — `<Orb variant={1|2|3|4} />`. Multi-stop radial gradients with an inline SVG
   noise overlay in `--noise` and an inset highlight.
 - **Breakpoints** — section grids stack below `lg` (1024px); the nav keeps its links and

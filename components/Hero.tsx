@@ -67,7 +67,11 @@ export default function Hero() {
               AI voice receptionists for home service businesses
             </div>
 
-            <h1 className="font-hero text-[clamp(40px,5.2vw,64px)] font-bold leading-[1.05] tracking-[-0.02em]">
+            {/* 9vw floor rather than a fixed 40px: the headline's <br> breaks are
+                deliberate, and at 40px "Every job captured." overflowed a 375px
+                screen and wrapped to a 4th line. Caps at 64px from ~711px up, so
+                desktop is unchanged. */}
+            <h1 className="font-display text-[clamp(30px,9vw,64px)] font-bold leading-[1.04] tracking-[-0.035em]">
               Every call booked.
               <br />
               Every job captured.
