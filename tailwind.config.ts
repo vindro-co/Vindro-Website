@@ -27,6 +27,18 @@ const config: Config = {
         },
         line: "#e4e4e7",
         green: "#16a34a",
+        /**
+         * Matches the voice widget's own avatar orb so the demo section reads as
+         * one object. `DEFAULT` is the widget's stock orb colour
+         * (avatar-orb-color-1) and `soft` is its second stop (avatar-orb-color-2);
+         * keep these in sync with VoiceWidget.tsx.
+         */
+        orb: {
+          DEFAULT: "#2792dc",
+          hover: "#1f7cbd",
+          soft: "#9ce6e6",
+          tint: "#eaf4fb",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],

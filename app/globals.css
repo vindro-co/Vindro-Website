@@ -127,6 +127,16 @@
     transform: scale(0.98);
   }
 
+  /* StartCallButton sits disabled showing "Connecting…" until the widget's
+     shadow DOM is clickable, so it needs to read as inactive. */
+  .btn:disabled {
+    @apply cursor-default opacity-60;
+  }
+
+  .btn:disabled:active {
+    transform: none;
+  }
+
   .btn-primary {
     @apply bg-ink text-white hover:bg-ink-hover;
   }
@@ -137,6 +147,11 @@
 
   .btn-light {
     @apply bg-white text-ink hover:bg-bg-alt;
+  }
+
+  /* Matches the voice widget's orb — used only in the live demo section. */
+  .btn-orb {
+    @apply bg-orb text-white hover:bg-orb-hover;
   }
 
   .btn-outline-light {

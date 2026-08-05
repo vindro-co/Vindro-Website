@@ -25,17 +25,20 @@ export default function LiveDemo() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="mx-auto max-w-[640px] rounded-xl2 border border-line bg-white px-8 py-10 text-center shadow-lg2">
-            <StartCallButton className="btn btn-primary btn-lg">
-              Talk to the receptionist
+          {/* Blue accents here (and only here) tie this card to the widget's own
+              blue orb, so the two read as one object. The rest of the site stays
+              monochrome. */}
+          <div className="mx-auto max-w-[640px] rounded-xl2 border border-orb/25 bg-gradient-to-b from-orb-tint to-white px-8 py-10 text-center shadow-lg2">
+            <StartCallButton className="btn btn-orb btn-lg">
+              Talk to it live now
             </StartCallButton>
 
             <p className="mt-4 text-[13px] text-ink-faint">
               Your browser will ask for microphone access. Nothing from this call is stored.
             </p>
 
-            <div className="mt-8 border-t border-line pt-7">
-              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.09em] text-ink-faint">
+            <div className="mt-8 border-t border-orb/20 pt-7">
+              <div className="mb-3 text-[11px] font-semibold uppercase tracking-[0.09em] text-orb">
                 Try saying
               </div>
               <ul className="flex flex-col gap-2">

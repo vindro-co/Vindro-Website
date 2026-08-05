@@ -22,6 +22,9 @@ import { ELEVENLABS_AGENT_ID, ELEVENLABS_WIDGET_SRC } from "@/lib/site";
 export default function VoiceWidget() {
   return (
     <>
+      {/* Orb colours are the widget's own stock blue, set explicitly rather than
+          omitted so a vendor default change can't silently drift away from the
+          blue the demo section is matched to (`orb` in tailwind.config.ts). */}
       <elevenlabs-convai
         agent-id={ELEVENLABS_AGENT_ID}
         dismissible
@@ -30,8 +33,8 @@ export default function VoiceWidget() {
         end-call-text="End call"
         listening-text="Listening…"
         speaking-text="Receptionist speaking"
-        avatar-orb-color-1="#0a0a0a"
-        avatar-orb-color-2="#52525b"
+        avatar-orb-color-1="#2792dc"
+        avatar-orb-color-2="#9ce6e6"
       ></elevenlabs-convai>
 
       <Script src={ELEVENLABS_WIDGET_SRC} strategy="afterInteractive" />
